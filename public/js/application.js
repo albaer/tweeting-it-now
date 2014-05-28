@@ -1,5 +1,7 @@
 $(document).ready(function() {
-	$("#tweet-it").on("submit", function() {
+	$("#tweet-it").on("submit", function(event) {
+		event.preventDefault();
+
 		$(".submit").prop('disabled', true);
 		$("#done").remove();
 		$("#tweet-it").after("<p id=\"processing\">Your tweet is being processed right now!</p>")
