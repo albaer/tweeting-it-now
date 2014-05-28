@@ -7,4 +7,9 @@ class User < ActiveRecord::Base
       config.access_token_secret = self.oauth_secret
     end
   end
+
+  def tweet(status)
+    tweet = tweets.create!(:status => status)
+    TweetWorker.perform_async(tweet.id)
+  end
 end
