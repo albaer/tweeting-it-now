@@ -30,6 +30,15 @@ end
 
 post '/:user_id' do
   @user = User.find_by_id(params[:user_id])
-  @user.client.update(params[:tweet])
-  redirect to "/"
+  job_id = @user.tweet(params[:tweet])
+  if request.xhr?
+    job_id
+  else
+    redirect to "/"
+  end
+end
+
+get '/status/:job_id' do
+  puts "in get request"
+  job_is_complete(:job_id).to_s
 end

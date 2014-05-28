@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-	include TweetWorker
 	has_many :tweets
 
   # def client

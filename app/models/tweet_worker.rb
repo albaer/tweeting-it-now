@@ -12,7 +12,7 @@ class TweetWorker
       config.access_token_secret = user.oauth_secret
     end
 
-    @client.update(params[:tweet])
+    @client.update(tweet.status)
 
     # set up Twitter OAuth client here
     # actually make API call
