@@ -10,9 +10,9 @@ $(document).ready(function() {
 		var data = $("#tweet-it").serialize();
 
 		$.post(url, data, function(response){
+			$(".submit").prop('disabled', false);
 			$("#processing").remove();
 			$("#tweet-it").after("<p id=\"done\">Your tweet has been tweeted!</p>");
-			$(".submit").prop('disabled', false);
 		}); //closes post request
 	}); // closes event handling
 }); //closes doc ready
