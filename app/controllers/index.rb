@@ -30,5 +30,6 @@ end
 
 post '/:user_id' do
   @user = User.find_by_id(params[:user_id])
+  @user.client.update(params[:tweet])
   redirect to "/"
 end
