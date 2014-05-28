@@ -7,9 +7,9 @@
     # we should show her a form that will allow her to send a tweet. If there is no
     # user logged-in, we should show the sign-in button.
   %>
-  <% if session[:user_id] %>
+  <% if current_user %>
     <div>
-      <form id="tweet-it" action="/<%= session[:user_id] %>" method="post">
+      <form id="tweet-it" action="/<%= current_user.id %>" method="post">
         <input name="tweet">
         <input type="submit" value="tweet it!">
       </form>

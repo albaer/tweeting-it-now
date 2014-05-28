@@ -28,12 +28,7 @@ get '/auth' do
 
 end
 
-get '/:username' do
-  @user = User.find_by_username(params[:username])
-  erb :index
-end
-
 post '/:user_id' do
   @user = User.find_by_id(params[:user_id])
-  redirect to "/#{@user.id}"
+  redirect to "/"
 end
