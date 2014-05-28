@@ -21,6 +21,9 @@ gem 'shotgun'
 gem 'oauth'
 gem 'twitter'
 
+gem 'sidekiq', '~> 2.17.0'
+gem 'redis'
+
 
 group :test do
   gem 'shoulda-matchers'
